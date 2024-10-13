@@ -83,7 +83,26 @@ const galleryMarkup = images
   
 gallery.innerHTML = galleryMarkup;
 
+gallery.addEventListener('click', (event) => {
+  event.preventDefault();
+  
+  if (event.target.nodeName !== 'IMG') return;
 
+  const originalSrc = event.target.dataset.source;
+
+  const instance = basicLightbox.create(`
+    <img src="${originalSrc}" alt="${event.target.alt}" />
+  `);
+
+  instance.show();
+
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      instance.close();
+    }
+  });
+});
 
 
 

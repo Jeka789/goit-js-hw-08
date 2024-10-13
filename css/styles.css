@@ -1,36 +1,39 @@
-body {
-    margin: 0;
-}
-
 ul {
-    padding: 0;
     list-style-type: none;
 }
 
 .container {
     width: 1440px;
-    height: 696px;
+    height: 100%;
 
-    padding: 24px 156px;
-
-    background-color: #ffffff;
+    background-color: ffffff;
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
+    padding: 24px 156px;
+    margin: 0;
+    gap: 14px;
 }
 
 .gallery-item {
-
+    width: calc(33.33% - 15px);
 }
 
 .gallery-link {
- 
+
 }
 
 .gallery-image {
+    width: 360px;
+    height: 200px;
+    cursor: zoom-in;
+    transition: transform 0.2s;
+}
 
+.gallery-image:hover {
+    transform: scale(1.05);
 }
 
 
